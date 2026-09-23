@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*unifica todo lo de la pagina*/
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 0px;
+    font-family: sans-serif;
+}
+
+header{
+    background: url(../imagenes/Marlin-5-trek.jpg) no-repeat;
+    height: 100vh;
+    background-size:cover;
+    display: flex; 
+    flex-direction: column;
+
+}
+
+.contenido{
+    min-width: 320px;
+
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 900vh;
+}
+
+header h1{
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+header span{
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 13vh;
+    display: flex;
+}
+
+nav a{
+    width: 33.333%;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1pt;
+    line-height: 100px;
+    border: 0.5px solid #1c1b1b;
+}
+
+nav a:hover{
+    color: #ccc;
+}
+
+#Modelos{
+    padding: 70px 0px;    
+}
+
+#Modelos h1{
+    font-size: 3rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#modelo{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;   
+    flex-wrap: wrap;
+    gap: 2rem; 
+}
+
+#modelo img{
+    width: 50%;
+    min-width: 300px;
+    max-height: 750px;
+    flex-grow: 1;
+}
+
+#modelo figcaption{
+    width: 40%;
+    font-size: 0.9rem;
+    margin-top: 20px ;
+    vertical-align: top;
+    padding-top: 10px;
+    flex-grow: 1;
+    line-height: 1.5rem; 
+    float: left;
+}
+
+#modelo #figcaption::first-letter{
+    font-size: 4rem;
+    margin-top: 20px;
+    float: left;
+}
