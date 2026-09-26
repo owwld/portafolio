@@ -1,0 +1,313 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 0px;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: url(../imagenes/portada.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido {
+    min-width: 320px;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #43ed00;
+    text-shadow: 0 0 5px #f4f2f2;
+}
+
+header span {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 13vh;
+    display: flex;
+}
+
+nav a {
+    width: 20%;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1pt;
+    line-height: 13vh;
+    border: 0.5px solid #1c1b1b;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+section {
+    padding: 70px 0px;
+}
+
+section h1 {
+    font-size: 3rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+#presentacion .presentacion-texto {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#modelo {
+    width: 90%;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#modelo img {
+    width: 50%;
+    min-width: 300px;
+    max-height: 750px;
+    flex-grow: 1;
+}
+
+#modelo figcaption {
+    width: 40%;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    flex-grow: 1;
+}
+
+
+.fila-educacion {
+    width: 90%;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.fila-educacion figure {
+    flex: 1 1 300px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fila-educacion figcaption {
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+.fila-trayectoria {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fila-trayectoria div {
+    width: 33.333%;
+    flex: 1 1 250px;
+    color: #fff;
+    text-align: center;
+    padding: 25px 15px;
+    border: 0.5px solid #1c1b1b;
+}
+
+.fila-trayectoria div span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1pt;
+}
+
+.fila-trayectoria div p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-top: 12px;
+}
+
+
+.fila-trayectoria-imagenes {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fila-trayectoria-imagenes div {
+    width: 33.333%;
+    flex: 1 1 250px;
+    padding: 15px;
+    border: 0.5px solid #1c1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fila-trayectoria-imagenes div img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Recuadros delimitadores para proyectos */
+.proyectos-lista {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.proyectos-lista div {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.proyectos-lista div span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.proyectos-lista div p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-top: 10px;
+}
+
+
+#servicios {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#servicios div {
+    flex: 1 1 300px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#servicios div span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+}
+
+#servicios div p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-top: 10px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.formulario label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.formulario input, .formulario textarea {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-family: sans-serif;
+    border-radius: 4px;
+}
+
+.formulario button {
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #1c1b1b;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.formulario button:hover {
+    background-color: #444;
+}
+
+footer {
+    background-color: #1c1b1b;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
