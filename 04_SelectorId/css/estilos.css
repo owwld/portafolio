@@ -74,18 +74,18 @@ nav a:hover{
     color: #ccc;
 }
 
-#Modelos{
+#Promociones{
     padding: 70px 0px;    
 }
 
-#Modelos h1{
+#Promociones h1{
     font-size: 3rem;
     color: #000;
     text-align: center;
     margin-bottom: 50px;
 }
 
-#modelo{
+#promo{
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -95,14 +95,14 @@ nav a:hover{
     gap: 2rem; 
 }
 
-#modelo img{
+#promo img{
     width: 50%;
     min-width: 300px;
     max-height: 750px;
     flex-grow: 1;
 }
 
-#modelo figcaption{
+#promo figcaption{
     width: 40%;
     font-size: 0.9rem;
     margin-top: 20px ;
@@ -113,8 +113,64 @@ nav a:hover{
     float: left;
 }
 
-#modelo #figcaption::first-letter{
+#promo #figcaption::first-letter{
     font-size: 4rem;
     margin-top: 20px;
     float: left;
+}
+
+#servicios{
+    width:80% ;
+    margin: 0px auto;
+    font-size: 0.9rem ;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+#servicios div{
+    padding: 10px;
+    flex-basis: 26%;
+    min-width: 320px;
+    flex-grow: 1;
+}
+
+#servicios span{
+    color: rgb(255, 2, 2);
+    font-size: 4rem;
+}
+
+#servicios p{
+    display: block;
+    font-size: 1rem;
+    color:black;
+    padding-bottom:20px ;
+    line-height: 1.5rem; 
+}
+
+#newModelos{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(../imagenes/bici.jpg) no-repeat fixed;
+    height: 500px;
+    background-size:cover;
+    margin: 280px 0;
+}
+
+#newModelos h1{
+    font-size: 4rem;
+    color:#ff0000;
+    text-align: center;
+    line-height: 500px;
+}
+
+#Soporte{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(../imagenes/bici2.jpg) no-repeat fixed;
+    height: 500px;
+    background-size:cover;
+    margin: 280px 0;
+}
+
+#Soporte h1{
+    font-size: 4rem;
+    color:#ff0000;
+    text-align: center;
+    line-height: 500px;
 }
