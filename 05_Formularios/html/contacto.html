@@ -13,7 +13,7 @@
         <a class="opcionMenuPrincipal" href="index.html">Conocenos</a>
         <a class="opcionMenuPrincipal" href="#quienesSomos">Quienes Somos</a>
         <a class="opcionMenuPrincipal" href="#videos">Videos</a>
-        <a class="opcionMenuPrincipal" href="#ubicacion">Contactanos</a>
+        <a class="opcionMenuPrincipal" href="../html/contacto.html#ubicame">Contactanos</a>
     </nav>
     <!---Seccion para el apartado de Quines somos--->
     <section class="contenido quienesSomos"></section>
@@ -29,8 +29,38 @@
     </section>
 
     <!---Sección formulario de Contactanos -->
-    <section id="ubicacion" class="contenido">
+    <section id="ubicame" class="contenido">
+        <fieldset id="formulario">
+            <legend>registro</legendl>
+                <form action = "#" method = "get" enctype="multipart/form-data">
+                    <input type="email" name="null" required placeholder="Ingresa tu email">
+                    <input type="password" name="pass" required placeholder="Ingresa tu contraseña">
+                    <input type="tel" name="tel" required placeholder="Ingresa tu telefono">
+                    <intput type="text" name="noombre" required placeholder="Ingresa tu nombre">
+                    <input type="number" name="edad" required placeholder="Ingresa tu edad">
+                    <input type="file" name="img" id=""/>
 
+                    <textarea name="mensaje" id="" cols="25" rows="9" required placeholder="Coloca tu mensaje "></textarea>
+                    <label for="">Genereal</label>
+                    <input type="radio" name="genero" />femenino
+                    <input type="radio" name="genero" />masculino
+
+                    <label for = "">Pasatiempos</label>
+                    <input type="checkbox" name="ch1" />Musica
+                    <input type="checkbox" name="ch2" />Billar
+                    <input type="checkbox" name="ch3" />Bailar
+
+                    <label for="">Grado de estudio</label>
+                    <select name="" id="">
+                        <option value="Bachillerato">Bachillerato</option>
+                        <option value="TSU">TSU</option>
+                        <option value="ING">ING</option>
+                        
+                        <input type="submit" name="env" value="Enviar">
+                        <input type="button" name="" value="botton"> 
+                    </select>
+                </form>
+        </fieldset>
     </section>
 
     
