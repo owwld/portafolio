@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto js con css</title>
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css">
+    <script src="../js/funciones.js"></script>
+    <script type="text/JavaScript">
+        alert('Hoola bienvenidos a JavaScript');
+    </script>    
+</head>
+<body>
+    <nav id="menuPrincipal">
+        <h1>
+            <a  class="opcionMenuPrincipal"   href="01_js.html">JavaScript</a>
+        </h1>
+    </nav>
+    <section class="contenido quienessomos">
+    <script>
+        var num1=prompt("Introducee el primer numero: ");
+        num1=parseInt(num1);
+        var num2=prompt("Introducee el segundo numero: ");
+        num2=parseInt(num2);
+        suma=num1 + num2;
+        res=num1 - num2;
+        mul=num1 * num2;
+        div=num1 /num2;
+        mod =num1 % num2;
+
+        document.write('<h1>Los resultados de los numeros es:</h1>');
+        document.write('<br>La suma de :'+num1+' + '+num2+ ' = '+suma );
+
+        document.write('<br>La resta de :'+num1+' - '+num2+ ' = '+res );        
+
+        document.write('<br>La multiplicacion de :'+num1+' x '+num2+ ' = '+mul );           
+
+        document.write('<br>La division de :'+num1+' / '+num2+ ' = '+div );   
+        
+        document.write('<br>El modulo de :'+num1+' % '+num2+ ' = '+mod );           
+    </script>
+
+    <article id="datos" class="contenedor">
+        <h3>Datos</h3>
+        <input type="text" id="letra" placeholder="Introduce una letra">
+        <input type="text" id="n1" placeholder="Introduce el numero decimal">
+        <input  type="button" value="Mostrar" onClick="mostrarDatos()">
+    </article>
+    <p id="resultados" class="res">Aqui estan los resultados</p>
+    </section>
+    
+</body>
+</html>
