@@ -14,11 +14,11 @@
 <body>
     <nav id="menuPrincipal">
         <h1>
-            <a  class="opcionMenuPrincipal"   href="01_js.html">JavaScript</a>
+            <a  class="opcionMenuPrincipal"    href="01_js.html">JavaScript</a>
         </h1>
     </nav>
-    <section class="contenido quienessomos">
-    <script>
+    <section class="contenido quienessomos" >
+    <!--<script>
         var num1=prompt("Introducee el primer numero: ");
         num1=parseInt(num1);
         var num2=prompt("Introducee el segundo numero: ");
@@ -40,14 +40,24 @@
         
         document.write('<br>El modulo de :'+num1+' % '+num2+ ' = '+mod );           
     </script>
-
-    <article id="datos" class="contenedor">
+    -->
+ <article id="datos" class="contenedor">
         <h3>Datos</h3>
         <input type="text" id="letra" placeholder="Introduce una letra">
         <input type="text" id="n1" placeholder="Introduce el numero decimal">
-        <input  type="button" value="Mostrar" onClick="mostrarDatos()">
+        <input type="text" id="n2" placeholder="Introduce el numero Entero"><br>
+        <input type="button" value="Mostrar Datos" onClick="mostrarDatos()">
     </article>
-    <p id="resultados" class="res">Aqui estan los resultados</p>
+
+    <article id="Factorial" class="contenedor">
+        <h3>Factorial</h3>
+        <input type="text" id="n3" placeholder="Introduce el numero Entero"><br>
+        <input type="button" value="Mostrar Factorial" onClick="mostrarFactorial()">
+    </article>   
+
+
+    <p id="resultados" class="res"> Resultados</p>
+
     </section>
     
 </body>
