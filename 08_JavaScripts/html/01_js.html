@@ -18,7 +18,8 @@
         </h1>
     </nav>
     <section class="contenido quienessomos" >
-    <!--<script>
+    <!--
+    <script>
         var num1=prompt("Introducee el primer numero: ");
         num1=parseInt(num1);
         var num2=prompt("Introducee el segundo numero: ");
@@ -57,8 +58,41 @@
 
 
     <p id="resultados" class="res"> Resultados</p>
+    
+
+    <article id="encuesta" class="contenedor">
+    <form id="formEncuesta">
+        <!-- Pregunta 1 -->
+        <p>1.- ¿Javascript es fácil de aprender?</p>
+        <label><input type="radio" name="p1" value="Si">Si</label>
+        <label><input type="radio" name="p1" value="Casi Todo">Casi Todo</label>
+        <label><input type="radio" name="p1" value="Casi Nada">Casi Nada</label>
+        <label><input type="radio" name="p1" value="No">No</label>
+        <br><br>
+
+        <!-- Pregunta 2 -->
+        <p>2.- ¿Los getElements son sencillos de implementar?</p>
+        <label><input type="radio" name="p2" value="Si">Si</label>
+        <label><input type="radio" name="p2" value="Casi Todo">Casi Todo</label>
+        <label><input type="radio" name="p2" value="Casi Nada">Casi Nada</label>
+        <label><input type="radio" name="p2" value="No">No</label>
+        <br><br>
+
+        <!-- Pregunta 3 -->
+        <p>3.- ¿Ya puedo desarrollar páginas profesionales con JS?</p>
+        <label><input type="radio" name="p3" value="Si">Si</label>
+        <label><input type="radio" name="p3" value="Casi Todo">Casi Todo</label>
+        <label><input type="radio" name="p3" value="Casi Nada">Casi Nada</label>
+        <label><input type="radio" name="p3" value="No">No</label>
+        <br><br>
+
+        <input type="button" value="Enviar" onClick="mostrarRespuestas()">
+    </form>
+    </article>
+        <p id="resultadoEncuesta" class="res"></p>
 
     </section>
+
     
 </body>
 </html>
