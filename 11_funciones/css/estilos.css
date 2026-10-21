@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+header, footer{
+    background-color: #42df4f;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 0px;
+}	
+
+
+section{
+	height:500px;
+	background-color: #b3cfe8;
+	font-size:20px;
+}
+
+footer{
+    background-color: #204956;
+}	
+		
+	

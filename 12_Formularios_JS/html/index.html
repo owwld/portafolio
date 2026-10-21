@@ -1,0 +1,78 @@
+class<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>JavaScript Estructuras de Control</title>
+		<link rel="stylesheet" href="../css/estilos.css" type="text/css"/>
+		<script type="text/javascript" src="../js/funciones.js"></script>
+	</head>
+	<body>
+		<nav id="menuPrincipal">
+			<h1>
+				<a class="opcionMenuPrincipal" href="index.html">¡ JavaScript !</a>
+			</h1>
+		</nav>
+		
+		<section class="contenido quienesSomos">
+		<div class="contenedor">
+                <h2>Formulario de Registro</h2>
+                <br>
+                <form>
+                    Nombre:
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre">
+                    
+                    <br><br>
+                    Descripción:
+                    <br>
+                    <textarea name="descripcion" placeholder="Hola Bienvenidos" id="des"></textarea>
+                    
+                    <br><br>
+                    Correo:
+                    <input type="text" name="email" id="correo">
+                    
+                    Password:
+                    <input type="password" name="pass" id="password">
+                    
+                    <br><br>
+                    Género:
+                    <input type="radio" name="genero" value="femenino" id="fem"> Femenino
+                    <input type="radio" name="genero" value="masculino" id="mas"> Masculino
+                    <input type="radio" name="genero" value="masculino" id="otro"> Otro
+					
+					
+                    <br><br>
+                    Pasatiempos:
+                    <input type="checkbox" name="pasatiempo" value="leer" id="leer"> Leer
+                    <input type="checkbox" name="pasatiempo" value="nadar" id="nadar"> Nadar
+                    <input type="checkbox" name="pasatiempo" value="jugar" id="jugar"> Jugar
+                    
+                    <br><br>
+                    Selecciona Archivo:
+                    <input type="file" name="archivo" id="archivo">
+                    
+                    <br><br>
+                    Ciudad:
+                    <select name="ciudad" id="ciudad">
+                        <option value="Leon">Leon</option>
+                        <option value="Silao">Sialo</option>
+                        <option value="Celayork">Celayork</option>
+                    </select>
+                    
+                    <br>
+                    <input type="button" value="Enviar" onclick="mostrarRespuestas()">
+                </form>
+				        <p id="resultadoEncuesta" class="res">Resultados de encuesta</p>
+
+            </div>
+        </section>			
+
+		<footer></footer>
+	</body>
+</html>
+
+
+
+
+
+
+

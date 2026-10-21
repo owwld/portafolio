@@ -1,0 +1,154 @@
+/*@import url('https://fonts.googleapis.com/css?family=Mogra');*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+html{
+	font-size:16px;
+}
+
+body{
+	font-size:0px;
+	background:url(../imagenes/fondo.jpg) no-repeat center fixed;
+	background-size: cover; 
+	padding-top:47px;
+}
+		
+#menuPrincipal{
+	background-color:rgba(247, 14, 11,0.7);
+	text-align:center;
+	position:fixed;
+	width:100%;
+	top:0px;
+	z-index:1;
+}
+	
+	.opcionMenuPrincipal{
+		display:inline-block;
+		text-decoration:none;
+		color:#fff;
+		padding:10px 50px;
+		cursor:pointer;
+		position:relative;
+		font-size:1.5rem;
+	}
+	
+	.opcionMenuPrincipal:hover{
+		background-color:rgba(255,255,255,0.4);
+	}
+		
+		
+.contenido{
+	width:100%;
+	/*height:600px;*/ /* comentar */
+	overflow:hidden;
+	min-width:320px;
+}
+
+.quienesSomos{
+	position:relative;
+	background-color:#F6CECE;
+	font-size:1.5rem;
+}
+
+/*empiezar desde este punto*/
+	.contenedor{
+		width:800px;
+		border:solid 1px rgb(73, 29, 3);
+		padding:10px;
+		margin:10px auto;
+		text-align:center;
+		/*display:none;*/ /* comentar */
+	}
+
+	.res{
+		width:700px;
+		border:solid 1px #800080;
+		padding:10px;
+		margin:10px auto;
+	}
+	
+	select{
+		display:block;
+		margin:10px auto;
+	}
+/*acomodar el boton abajo*/
+	input[type="text"]{
+		width:80%;
+		padding:10px;
+		margin-bottom:10px;
+	}
+	
+	input[type="button"], .quienesSomos a ,span{
+		width:30%;
+		padding:5px;
+		margin-bottom:10px;
+		display:block;
+		background-color:#A52A2A;
+		color:#fff;
+		cursor:pointer;
+		border:none;
+		font-size:14px;
+		font-family:Arial;
+		font-weight:normal;
+		margin:0 auto;
+		position:relative;
+	}
+	/*dibujar los circulos*/
+	#estilo div{
+		width:30px;
+		height:30px;
+		border:1px solid #000;
+		display:inline-block;
+		border-radius:50%;
+		margin:5px 10px;
+		cursor:pointer;
+		position:relative;
+	}
+	
+	input[type="button"]:active, .quienesSomos a:active , span:active, #estilo div:active{
+		top:1px;
+	}
+	
+	.verde{
+		background-color:#0f0;
+	}
+	
+	.azul{
+		background-color:#00f;
+	}
+	
+	.todo{
+		background-color:#FFA500;
+		border:4px solid #800080;
+		border-radius:10px 0px;
+	}
+	
+	.nada{
+		border:1px solid #0f0;
+	}
+	
+	.mas{
+		line-height:70px;
+		border:4px solid #f00;
+		border-radius:10px 0px;
+		height:100px;
+		color:#fff;
+	}
+	
+	.menos{
+		border:solid 5x #800080;
+		border-radius:0px;
+	}
+
+	
+	
+footer{
+	background-color:rgba(251, 24, 10,0.9);
+	height:100px;
+}		
+		
+	
