@@ -1,0 +1,98 @@
+class<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>JavaScript Estructuras de Control</title>
+		<link rel="stylesheet" href="../css/estilos.css" type="text/css"/>
+		<script type="text/javascript" src="../js/funciones.js"></script>
+          <link rel="stylesheet" href="../css/bootstrap.min.css">
+	</head>
+	<body>
+		<nav id="menuPrincipal">
+			<h1>
+				<a class="opcionMenuPrincipal" href="index.html">home</a>
+				<a class="opcionMenuPrincipal" href="#ejercicio1">Ejercicios 1</a>
+
+            </h1>
+		</nav>
+        <section class="contenido quienesSomos">
+            <div class="contenedor" id="presentacion">
+            <h1>Ejercicios de JavaScript</h1>
+            <h2>MARTINEZ MEJIA CHRISTIAN OSWALDO</h2>
+            <h3>LDSM 406</h3>
+            </div>
+        </section>
+		<section class="contenido quienesSomos">
+        <div class="contenedor" id="ejercicio1">
+                <h2>¿De que parte de la ciudad eres?</h2>
+                <br>
+                <form>
+                    Nombre: 
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre" >
+                    
+                    <br><br>
+                    De que ciudad eres:
+                    <select name="ciudad" id="ciudad">
+                        <option value="Leon">Leon</option>
+                        <option value="Silao">Sialo</option>
+                        <option value="Celayork">Celayork</option>
+                        <option value="Irakpuato">Irakpuato</option>
+
+                    </select>         
+                    
+                    <br><br>
+                    Emite tu voto:
+                    <input type="radio" name="ubi" value="Norte" id="norte"> Norte
+                    <input type="radio" name="ubi" value="Sur" id="sur"> Sur   
+                    <input type="radio" name="ubi" value="Centro" id="centro"> Centro                    
+                </form><br>
+                <input type="button" value="Enviar" onclick="mostrarRespuestas1()">                
+                <br><br>
+                 <p id="resultadoEncuesta" class="res">Resultados de encuesta</p>
+
+        </div>
+        </section>
+        <br><br><br>
+
+        <section class="contenido quienesSomos">
+        <div class="contenedor">
+            <h2>Ejercicis 2-3</h2>
+                <div class="multicontenedor">
+                <h3>Sumar de numeros</h3>
+                <input type="number" id="numS" placeholder="Primer numero"><br><br>
+                <input type="button" value="Sumar" onclick="sumarNumeros()">
+                </div>
+
+                <div class="multicontenedor">
+                <form>
+                <h3>¿Cual numero es mayor?</h3>
+                <input type="number" id="num1" placeholder="Ingrese un numero">
+                <input type="number" id="num2" placeholder="Ingrese otro numero">
+                <input type="number" id="num3" placeholder="Ingrese otro numero"><br><br>
+                <input type="button" value="Comparar" onclick="compararNumeros()" >
+                </form>
+                </div>    
+
+                <div class="multicontenedor">
+                <h3>Cálculo de Importe Neto</h3>
+                <input type="number" id="importeBruto" placeholder="Ingresa importe bruto"><br><br>
+                <input type="button" value="Calcular" onclick="calcularImporteNeto()">
+                </div>
+
+                <p id="resultados" class="res">Resultados</p>
+        </div>
+        </section>   
+
+
+	
+		<footer></footer>
+            <script src="../js/bootstrap.bundle.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
