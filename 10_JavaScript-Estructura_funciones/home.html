@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Índice - Prácticas JavaScript</title>
+    <link rel="stylesheet" href="./css/estilos.css" type="text/css"/>
+    <script type="text/javascript" src="./js/funciones.js"></script>
+</head>
+<body class="body-index">
+
+
+    <nav id="menuPrincipal">
+
+        <button id="btnMenuToggle" onclick="toggleFormulario()">☰</button>
+
+        <h1>
+            <a class="opcionMenuPrincipal" href="./html/index.html">home</a>
+            <a class="opcionMenuPrincipal" href="./html/index.html#ejercicio1">Ejercicios 1</a>
+            <a class="opcionMenuPrincipal" href="./html/index.html#ejercicio2">Ejercicios 2-5</a>
+            <a class="opcionMenuPrincipal" href="./html/index.html#ejercicio3">Ejercicios While y For</a>
+            <a class="opcionMenuPrincipal" href="./html/index.html#ejercicio4">Ejercicios Arreglos</a>
+        </h1>
+    </nav>
+
+
+    <div id="formIngreso">
+        <form onsubmit="event.preventDefault(); alert('Sesión iniciada');">
+            Correo Electrónico:<br>
+            <input type="text" placeholder="Correo"><br><br>
+            Contraseña:<br>
+            <input type="password" placeholder="Contraseña"><br><br>
+            <input type="submit" value="Iniciar Sesión" class="btn-login">
+        </form>
+    </div>
+
+    <div class="tarjeta-indice">
+        <h2>Indice</h2>
+        <ul>
+            <li><a href="./html/index.html#ejercicio1">Pagina 1: Encuestas y datos de usuario</a></li>
+            <li><a href="./html/index.html#ejercicio2">Pagina 2: Suma, comparación, importe neto y sueldo</a></li>
+            <li><a href="./html/index.html#ejercicio3">Pagina 3: Bucles (Impares, Asteriscos y Tablas)</a></li>
+            <li><a href="./html/index.html#ejercicio4">Pagina 4: Métodos de Arreglos (Países)</a></li>
+        </ul>
+    </div>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="info-autor">
+            <p><strong>Datos del Autor:</strong> MARTINEZ MEJIA CHRISTIAN OSWALDO</p>
+            <p><strong>Fecha de elaboración:</strong> Octubre 2026</p>
+            <p><strong>Datos de contacto:</strong> LDSM 406 - UTL</p>
+        </div>
+        <div class="cuadro-foto">
+            Foto del desarrollador
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

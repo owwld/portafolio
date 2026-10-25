@@ -10,32 +10,34 @@ html {
 
 body {
     font-size: 0px;
-    padding-top: 47px;
+    padding-top: 55px;
 }
-        
+
+/* MENÚ PRINCIPAL */
 #menuPrincipal {
-    background-color: rgba(2, 15, 57, 0.7);
+    background-color: rgba(2, 15, 57, 0.9);
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0px;
-    z-index: 1;
+    z-index: 100;
 }
-    
+
 .opcionMenuPrincipal {
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    padding: 10px 50px;
+    padding: 12px 15px; /* Reducido para evitar encimado */
     cursor: pointer;
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Ajustado para que quepan todos */
 }
 
 .opcionMenuPrincipal:hover {
     background-color: rgba(53, 54, 54, 0.4);
 }
-        
+
+/* ESTRUCTURA GENERAL */
 .contenido {
     width: 100%;
     overflow: hidden;
@@ -50,31 +52,31 @@ body {
 
 .contenedor {
     color: #fff;
-    width: 800px;
+    width: 900px; /* Aumentado a 900px para dar buen espacio */
     border: solid 1px rgb(17, 17, 35);
-    padding: 10px;
+    padding: 15px;
     margin: 10px auto;
     text-align: center;
     background-color: rgba(16, 40, 88, 0.7);
-    border-radius: 10%;
+    border-radius: 20px;
 }
 
 #presentacion {
     color: #fff;
-    width: 800px;
+    width: 900px;
     border: solid 1px rgb(17, 17, 35);
     padding: 10px;
     margin: 10px auto;
     text-align: center;
     background-color: rgba(16, 40, 88, 0.7);
-    border-radius: 5%;
+    border-radius: 15px;
 }
 
 .multicontenedor {
     color: #fff;
     width: 700px;
     border: solid 1px rgb(17, 17, 35);
-    padding: 10px ;
+    padding: 10px;
     margin: 10px auto;
     text-align: center;
     background-color: rgba(21, 50, 107, 0.7);
@@ -90,12 +92,11 @@ body {
 select {
     display: block;
     margin: 10px auto;
-
 }
 
 input[type="text"] {
     width: 80%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 10px;
 }
 
@@ -121,4 +122,189 @@ input[type="button"]:active {
 footer {
     background-color: rgba(16, 40, 88, 0.7);
     height: 100px;
+}
+
+
+
+/* Cuadrícula simétrica de 3 columnas */
+.grid-metodos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin: 15px auto 0 auto;
+}
+
+/* Anula el width: 700px fijo de .multicontenedor únicamente dentro de la grid */
+.grid-metodos .multicontenedor {
+    width: 100% !important; 
+    margin: 0 !important;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+/* Botones en las tarjetas de la grid */
+.grid-metodos input[type="button"] {
+    width: 90% !important;
+    padding: 6px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: normal;
+}
+
+/* Cajas de entrada dentro de las tarjetas */
+.grid-metodos input[type="text"],
+.grid-metodos input[type="number"] {
+    width: 85% !important;
+    padding: 5px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+/* Cuadro de resultados sticky ajustado */
+.res-fijo {
+    width: 100% !important;
+    max-width: 860px;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    background-color: rgba(9, 1, 63, 0.95);
+    border: 2px solid #526794;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px auto;
+}
+
+footer {
+    background-color: rgba(2, 15, 57, 0.95);
+    border-top: 1px solid #526794;
+    padding: 20px 10px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.contenedor-footer {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.contenedor-footer p {
+    margin: 3px 0;
+}
+
+/* ===================================================
+   ESTILOS PARA LA PÁGINA DE ÍNDICES
+   =================================================== */
+
+.body-index {
+    background-color: rgba(2, 15, 57, 0.9);
+}
+
+/* Tarjeta central del índice */
+.tarjeta-indice {
+    background-color: #09013f;
+    width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.tarjeta-indice h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.tarjeta-indice ul {
+    list-style: none;
+}
+
+.tarjeta-indice li {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.tarjeta-indice a {
+    color: #00c3ff;
+    text-decoration: underline;
+}
+
+/* Botón flotante y Formulario desplegable (Punto IV) */
+#btnMenuToggle {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    z-index: 101;
+}
+
+#formIngreso {
+    display: none;
+    background-color: #09013f;
+    width: 250px;
+    padding: 15px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    z-index: 100;
+    color: #fff;
+    border: 1px solid #526794;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer limpio sin inline styles en HTML */
+footer {
+    background-color: rgba(2, 15, 57, 0.95);
+    border-top: 1px solid #526794;
+    padding: 20px 10px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.contenedor-footer {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-footer p {
+    margin: 3px 0;
+}
+
+.info-autor {
+    text-align: left;
+}
+
+.cuadro-foto {
+    border: 1px dashed #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 120px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #ffffff;
 }

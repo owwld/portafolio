@@ -1,45 +1,48 @@
-class<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<title>JavaScript Estructuras de Control</title>
-		<link rel="stylesheet" href="../css/estilos.css" type="text/css"/>
-		<script type="text/javascript" src="../js/funciones.js"></script>
-          <link rel="stylesheet" href="../css/bootstrap.min.css">
-	</head>
-	<body>
-		<nav id="menuPrincipal">
-			<h1>
-				<a class="opcionMenuPrincipal" href="index.html">home</a>
-				<a class="opcionMenuPrincipal" href="#ejercicio1">Ejercicios 1</a>
-
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript Estructuras de Control</title>
+        <link rel="stylesheet" href="../css/estilos.css" type="text/css"/>
+        <script type="text/javascript" src="../js/funciones.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav id="menuPrincipal">
+            <h1>
+                <a class="opcionMenuPrincipal" href="index.html">Home</a>
+                <a class="opcionMenuPrincipal" href="#ejercicio1">Ejercicios 1</a>
+                <a class="opcionMenuPrincipal" href="#ejercicio2">Ejercicios 2-5</a>
+                <a class="opcionMenuPrincipal" href="#ejercicio3">Ejercicios While y For</a>
+                <a class="opcionMenuPrincipal" href="#ejercicio4">Ejercicios Arreglos</a>
+                <a class="opcionMenuPrincipal" href="../home.html">Iniciar Sesión</a>
             </h1>
-		</nav>
+        </nav>
+        
         <section class="contenido quienesSomos">
             <div class="contenedor" id="presentacion">
-            <h1>Ejercicios de JavaScript</h1>
-            <h2>MARTINEZ MEJIA CHRISTIAN OSWALDO</h2>
-            <h3>LDSM 406</h3>
+                <h1>Ejercicios de JavaScript</h1>
+                <h2>MARTINEZ MEJIA CHRISTIAN OSWALDO</h2>
+                <h3>LDSM 406</h3>
             </div>
         </section>
-		<section class="contenido quienesSomos">
-        <div class="contenedor" id="ejercicio1">
-                <h2>¿De que parte de la ciudad eres?</h2>
+
+        <!-- EJERCICIO 1 -->
+        <section class="contenido quienesSomos">
+            <div class="contenedor" id="ejercicio1">
+                <h2>¿De qué parte de la ciudad eres?</h2>
                 <br>
                 <form>
                     Nombre: 
-                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre" >
-                    
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre">
                     <br><br>
-                    De que ciudad eres:
+                    De qué ciudad eres:
                     <select name="ciudad" id="ciudad">
                         <option value="Leon">Leon</option>
-                        <option value="Silao">Sialo</option>
+                        <option value="Silao">Silao</option>
                         <option value="Celayork">Celayork</option>
                         <option value="Irakpuato">Irakpuato</option>
-
-                    </select>         
-                    
+                    </select>        
                     <br><br>
                     Emite tu voto:
                     <input type="radio" name="ubi" value="Norte" id="norte"> Norte
@@ -48,51 +51,160 @@ class<!DOCTYPE html>
                 </form><br>
                 <input type="button" value="Enviar" onclick="mostrarRespuestas1()">                
                 <br><br>
-                 <p id="resultadoEncuesta" class="res">Resultados de encuesta</p>
-
-        </div>
+                <p id="resultadoEncuesta" class="res">Resultados de encuesta</p>
+            </div>
         </section>
         <br><br><br>
 
-        <section class="contenido quienesSomos">
-        <div class="contenedor">
-            <h2>Ejercicis 2-3</h2>
+        <!-- EJERCICIOS 2 A 5 -->
+        <section class="contenido quienesSomos" id="ejercicio2">
+            <div class="contenedor">
+                <h2>Ejercicios 2-5</h2>
                 <div class="multicontenedor">
-                <h3>Sumar de numeros</h3>
-                <input type="number" id="numS" placeholder="Primer numero"><br><br>
-                <input type="button" value="Sumar" onclick="sumarNumeros()">
+                    <h3>Suma de números</h3>
+                    <input type="number" id="numS" placeholder="Primer número"><br><br>
+                    <input type="button" value="Sumar" onclick="sumarNumeros()">
                 </div>
 
                 <div class="multicontenedor">
-                <form>
-                <h3>¿Cual numero es mayor?</h3>
-                <input type="number" id="num1" placeholder="Ingrese un numero">
-                <input type="number" id="num2" placeholder="Ingrese otro numero">
-                <input type="number" id="num3" placeholder="Ingrese otro numero"><br><br>
-                <input type="button" value="Comparar" onclick="compararNumeros()" >
-                </form>
+                    <form>
+                        <h3>¿Cuál número es mayor?</h3>
+                        <input type="number" id="num1" placeholder="Ingrese un número">
+                        <input type="number" id="num2" placeholder="Ingrese otro número">
+                        <input type="number" id="num3" placeholder="Ingrese otro número"><br><br>
+                        <input type="button" value="Comparar" onclick="compararNumeros()">
+                    </form>
                 </div>    
 
                 <div class="multicontenedor">
-                <h3>Cálculo de Importe Neto</h3>
-                <input type="number" id="importeBruto" placeholder="Ingresa importe bruto"><br><br>
-                <input type="button" value="Calcular" onclick="calcularImporteNeto()">
+                    <h3>Cálculo de Importe Neto</h3>
+                    <input type="number" id="importeBruto" placeholder="Ingresa importe bruto"><br><br>
+                    <input type="button" value="Calcular" onclick="calcularImporteNeto()">
                 </div>
 
+                <div class="multicontenedor">
+                    <h3>Calculadora de sueldo</h3>
+                    <input type="number" id="añosTrabajados" placeholder="Años trabajados"><br><br>
+                    <input type="button" value="Calcular" onclick="calcularSueldo()">
+                </div>   
                 <p id="resultados" class="res">Resultados</p>
-        </div>
+            </div>
         </section>   
+        
+        <!-- EJERCICIO 3: WHILE Y FOR (AQUÍ ESTÁN TUS EJERCICIOS) -->
+        <section class="contenido quienesSomos" id="ejercicio3">
+            <div class="contenedor">
+                <h2>Ejercicios con While y For</h2>
+                <div class="multicontenedor">
+                    <h3>Números del 1 al 100 impares</h3><br>
+                    <input type="button" value="Imprimir números impares" onclick="mostrarImpares()">
+                </div>
+                
+                <div class="multicontenedor">
+                    <h2>Fila de asteriscos</h2><br>   
+                    <input type="number" id="numAsteriscos" placeholder="Ingresa un número"><br><br>
+                    <input type="button" value="Imprimir fila de asteriscos" onclick="mostrarAsteriscos()">
+                </div>
 
+                <div class="multicontenedor">
+                    <h2>Tabla de multiplicar</h2><br>   
+                    <input type="number" id="numTabla" placeholder="Ingresa un número"><br><br>
+                    <input type="button" value="Imprimir tabla de multiplicar" onclick="mostrarTablaMultiplicar()">
+                </div>
 
-	
-		<footer></footer>
-            <script src="../js/bootstrap.bundle.js"></script>
-	</body>
+                <p id="resultados2" class="res">Resultados</p>    
+            </div>   
+        </section>
+
+        <!-- EJERCICIO 4: ARREGLOS -->
+        <section class="contenido quienesSomos" id="ejercicio4">
+            <div class="contenedor" id="metodos">
+                <h2>III.- Arreglos (Países)</h2>
+
+                <p id="resultadosArreglos" class="res res-fijo">
+                    <strong>Arreglo actual (10 elementos):</strong><br>
+                    [México, Canadá, Japón, Brasil, Alemania, Francia, Italia, España, Argentina, Chile]
+                </p>
+
+                <div class="grid-metodos">
+                    <div class="multicontenedor">
+                        <h3>Método Pop</h3>
+                        <input type="button" value="Eliminar Último" onclick="probarPop()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Shift</h3>
+                        <input type="button" value="Eliminar Primero" onclick="probarShift()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Push</h3>
+                        <input type="text" id="inputPush" placeholder="País a agregar"><br>
+                        <input type="button" value="Agregar al Final" onclick="probarPush()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Unshift</h3>
+                        <input type="text" id="inputUnshift" placeholder="País a agregar"><br>
+                        <input type="button" value="Agregar al Inicio" onclick="probarUnshift()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Splice</h3>
+                        <input type="number" id="posSplice" placeholder="Pos" style="width: 40% !important; display: inline-block;">
+                        <input type="number" id="cantSplice" placeholder="Cant" style="width: 40% !important; display: inline-block;"><br><br>
+                        <input type="button" value="Aplicar Splice" onclick="probarSplice()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Delete</h3>
+                        <input type="number" id="posDelete" placeholder="Posición"><br>
+                        <input type="button" value="Eliminar Elemento" onclick="probarDelete()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Reverse</h3>
+                        <input type="button" value="Invertir Arreglo" onclick="probarReverse()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Sort</h3>
+                        <input type="button" value="Ordenar Alfabéticamente" onclick="probarSort()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Concat</h3>
+                        <input type="text" id="inputConcat" placeholder="Países con comas"><br>
+                        <input type="button" value="Concatenar" onclick="probarConcat()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Método Join</h3>
+                        <input type="text" id="inputJoin" placeholder="Separador (ej. -)"><br>
+                        <input type="button" value="Unir" onclick="probarJoin()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Propiedad Length</h3>
+                        <input type="button" value="Ver Tamaño" onclick="probarLength()">
+                    </div>
+
+                    <div class="multicontenedor">
+                        <h3>Reiniciar Arreglo</h3>
+                        <input type="button" value="Restablecer Lista" onclick="reiniciarArreglo()">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+        <div class="contenedor-footer">
+        <p><strong>Desarrollado por:</strong> MARTINEZ MEJIA CHRISTIAN OSWALDO | Grupo: LDSM 406</p>
+        <p><strong>Fecha de elaboración:</strong> Octubre 2026</p>
+        <p>© Todos los derechos reservados - Universidad Tecnológica de León</p>
+        </div>
+
+        </footer>
+        <script src="../js/bootstrap.bundle.js"></script>
+    </body>
 </html>
-
-
-
-
-
-
-
