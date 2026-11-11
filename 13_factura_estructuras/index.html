@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Eventos - Práctica</title>
+</head>
+<body>
+
+    <header>
+		<h1>¡Javascript!</h1>
+	</header>
+
+    <section>
+        <article>
+            <fieldset id="Receptor">
+                <legend>Datos del Receptor: </legend>
+                <input class="datos-receptor" type="text" placeholder="Razón Social">
+                <input class="datos-receptor" type="text" placeholder="RFC">         
+                <label id="titulo-conceptos" class="titulo-conceptos">No. de Conceptos:
+                    <input id="n-conceptos" type="number" id="numeroConceptos" min="0" max="20" value="0">
+                    <button id="generar">Generar</button>
+                </label>
+            </fieldset>
+            
+            <fieldset id="cuerpo">
+                <legend>Conceptos: </legend>
+                <div id="conceptos">
+                </div>
+               
+                <button id="agregar" class="agregar">Agregar Concepto</button>
+            </fieldset>
+            
+            <fieldset id="totales">
+                <table>
+                    <tr>
+                        <th>Subtotal:</th>
+                        <td id="subTotal">0.00</td>
+                    </tr>
+                    <tr>
+                        <th>IVA:</th>
+                        <td id="iva">0.00</td>
+                    </tr>
+                    <tr>
+                        <th>Total:</th>
+                        <td id="total">0.00</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </article>
+    </section>
+
+    <footer>2026</footer>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
