@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión y Registro</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="tarjeta">
+    <h1 id="titulo">Inicio de Sesión</h1>
+
+    <!-- FORMULARIO DE INICIO DE SESIÓN -->
+    <form id="formLogin">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" placeholder="Introduce tu nombre de usuario" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Introduce tu contraseña" required>
+
+      <button type="submit">Ingresar</button>
+      <button type="button" id="btnIrRegistro">Registrarse</button>
+    </form>
+
+    <!-- FORMULARIO DE REGISTRO (oculto inicialmente) -->
+    <form id="formRegistro" style="display: none;">
+      <label for="nuevoUsuario">Nuevo Usuario</label>
+      <input type="text" id="nuevoUsuario" placeholder="Elige un nombre de usuario" required>
+
+      <label for="nuevaPassword">Nueva Contraseña</label>
+      <input type="password" id="nuevaPassword" placeholder="Crea una contraseña" required>
+
+      <button type="submit">Guardar Usuario</button>
+      <button type="button" id="btnVolverLogin">Volver al Inicio de Sesión</button>
+    </form>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script src="funciones.js"></script>
+</body>
+</html>

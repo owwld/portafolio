@@ -1,73 +1,102 @@
-class LoteTela {
-    constructor(id, tipoFibra, kilogramos) {
+class Usuario {
+    constructor(id, nombre, password) {
         this.id = id;
-        this.tipoFibra = tipoFibra;
-        this.kilogramos = kilogramos;
+        this.nombre = nombre;
+        this.password = password;
     }
 }
 
-const selectFibra = document.getElementById("tipoFibra");
-const inputKilos = document.getElementById("kilosTela");
-const btn = document.getElementById("btnCalcular");
-const lista = document.getElementById("historialLotes");
-const aguaTotalTexto = document.getElementById("aguaTotal");
+// Elementos del DOM
+const seccionLogin = document.getElementById("seccionLogin");
+const seccionRegistro = document.getElementById("seccionRegistro");
+const mensaje = document.getElementById("mensaje");
 
-// Cargar lotes al iniciar
-document.addEventListener("DOMContentLoaded", cargarLotes);
+// Inputs Login
+const inputUsuario = document.getElementById("usuario");
+const inputPassword = document.getElementById("password");
 
-// Agregar nuevos lotes
-btn.addEventListener("click", agregarLote);
+// Inputs Registro
+const inputNuevoUsuario = document.getElementById("nuevoUsuario");
+const inputNuevaPassword = document.getElementById("nuevaPassword");
 
-// Función para agregar lote
-function agregarLote() {
-    const fibra = selectFibra.value;
-    const kilos = Number(inputKilos.value.trim());
+// Botones
+const btnIngresar = document.getElementById("btnIngresar");
+const btnIrRegistro = document.getElementById("btnIrRegistro");
+const btnGuardar = document.getElementById("btnGuardar");
+const btnVolverLogin = document.getElementById("btnVolverLogin");
 
-    if (kilos <= 0) {
-        return alert("Por favor ingrese una cantidad válida de kilogramos");
+// Eventos
+btnIrRegistro.addEventListener("click", mostrarRegistro);
+btnVolverLogin.addEventListener("click", mostrarLogin);
+btnGuardar.addEventListener("click", registrarUsuario);
+btnIngresar.addEventListener("click", iniciarSesion);
+
+// Funciones para cambiar de vista
+function mostrarRegistro() {
+    seccionLogin.classList.add("d-none");
+    seccionRegistro.classList.remove("d-none");
+    mensaje.textContent = "";
+}
+
+function mostrarLogin() {
+    seccionRegistro.classList.add("d-none");
+    seccionLogin.classList.remove("d-none");
+    mensaje.textContent = "";
+}
+
+// Obtener usuarios desde localStorage
+function obtenerUsuarios() {
+    return JSON.parse(localStorage.getItem("usuarios")) || [];
+}
+
+// Registrar nuevo usuario
+function registrarUsuario() {
+    const nombre = inputNuevoUsuario.value.trim();
+    const password = inputNuevaPassword.value.trim();
+
+    if (nombre === "" || password === "") {
+        return alert("Por favor complete todos los campos");
     }
 
-    const lotes = obtenerLotes();
-    const nuevoLote = new LoteTela(lotes.length + 1, fibra, kilos);
+    const usuarios = obtenerUsuarios();
 
-    lotes.push(nuevoLote);
-    localStorage.setItem("lotes", JSON.stringify(lotes));
+    // Validar que no exista el usuario
+    const existe = usuarios.some(u => u.nombre === nombre);
+    if (existe || nombre === "admin") {
+        mensaje.className = "mt-3 fw-bold text-center text-danger";
+        mensaje.textContent = "Ese usuario ya existe";
+        return;
+    }
 
-    mostrarLotes();
-    inputKilos.value = "";
-}
+    const nuevoUsuario = new Usuario(usuarios.length + 1, nombre, password);
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-function obtenerLotes() {
-    return JSON.parse(localStorage.getItem("lotes")) || [];
-}
-
-function mostrarLotes() {
-    const lotes = obtenerLotes();
-    lista.innerHTML = "";
-    let totalAcumulado = 0;
+    inputNuevoUsuario.value = "";
+    inputNuevaPassword.value = "";
     
-    lotes.forEach((lote, index) => {
-        // 2. Calcular agua según el tipo de fibra
-        let aguaLote = 0;
-        if (lote.tipoFibra === "algodon") {
-            aguaLote = lote.kilogramos * 10000;
-        } else {
-            aguaLote = lote.kilogramos * 300;
-        }
-
-        totalAcumulado += aguaLote;
-
-        const li = document.createElement("li");
-        li.className = "list-group-item d-flex justify-content-between align-items-center mb-1";
-        li.textContent = `Lote #${lote.id} - ${lote.tipoFibra} (${lote.kilogramos} kg): ${aguaLote} L`;
-
-
-        lista.appendChild(li);
-    });
-
-    aguaTotalTexto.textContent = totalAcumulado;
+    mostrarLogin();
+    mensaje.className = "mt-3 fw-bold text-center text-success";
+    mensaje.textContent = "Usuario registrado correctamente";
 }
 
-function cargarLotes() {
-    mostrarLotes();
+// Validar inicio de sesión
+function iniciarSesion() {
+    const nombre = inputUsuario.value.trim();
+    const password = inputPassword.value.trim();
+
+    if (nombre === "" || password === "") {
+        return alert("Por favor ingrese usuario y contraseña");
+    }
+
+    const usuarios = obtenerUsuarios();
+    const usuarioValido = usuarios.find(u => u.nombre === nombre && u.password === password);
+
+    if ((nombre === "admin" && password === "1234") || usuarioValido) {
+        mensaje.className = "mt-3 fw-bold text-center text-success";
+        mensaje.textContent = "¡Bienvenido, " + nombre + "!";
+    } else {
+        mensaje.className = "mt-3 fw-bold text-center text-danger";
+        mensaje.textContent = "Usuario o contraseña incorrectos";
+    }
 }
