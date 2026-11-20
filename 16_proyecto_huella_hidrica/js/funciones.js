@@ -1,102 +1,67 @@
-class Usuario {
-    constructor(id, nombre, password) {
+class LoteTela {
+    constructor(id, tipoFibra, kilogramos) {
         this.id = id;
-        this.nombre = nombre;
-        this.password = password;
+        this.tipoFibra = tipoFibra;
+        this.kilogramos = kilogramos;
     }
 }
 
-// Elementos del DOM
-const seccionLogin = document.getElementById("seccionLogin");
-const seccionRegistro = document.getElementById("seccionRegistro");
-const mensaje = document.getElementById("mensaje");
+const selectFibra = document.getElementById("tipoFibra");
+const inputKilos = document.getElementById("kilosTela");
+const btn = document.getElementById("btnCalcular");
+const lista = document.getElementById("historialLotes");
+const aguaTotalTexto = document.getElementById("aguaTotal");
 
-// Inputs Login
-const inputUsuario = document.getElementById("usuario");
-const inputPassword = document.getElementById("password");
+document.addEventListener("DOMContentLoaded", cargarLotes);
+btn.addEventListener("click", agregarLote);
 
-// Inputs Registro
-const inputNuevoUsuario = document.getElementById("nuevoUsuario");
-const inputNuevaPassword = document.getElementById("nuevaPassword");
+function agregarLote() {
+    const fibra = selectFibra.value;
+    const kilos = Number(inputKilos.value.trim());
 
-// Botones
-const btnIngresar = document.getElementById("btnIngresar");
-const btnIrRegistro = document.getElementById("btnIrRegistro");
-const btnGuardar = document.getElementById("btnGuardar");
-const btnVolverLogin = document.getElementById("btnVolverLogin");
-
-// Eventos
-btnIrRegistro.addEventListener("click", mostrarRegistro);
-btnVolverLogin.addEventListener("click", mostrarLogin);
-btnGuardar.addEventListener("click", registrarUsuario);
-btnIngresar.addEventListener("click", iniciarSesion);
-
-// Funciones para cambiar de vista
-function mostrarRegistro() {
-    seccionLogin.classList.add("d-none");
-    seccionRegistro.classList.remove("d-none");
-    mensaje.textContent = "";
-}
-
-function mostrarLogin() {
-    seccionRegistro.classList.add("d-none");
-    seccionLogin.classList.remove("d-none");
-    mensaje.textContent = "";
-}
-
-// Obtener usuarios desde localStorage
-function obtenerUsuarios() {
-    return JSON.parse(localStorage.getItem("usuarios")) || [];
-}
-
-// Registrar nuevo usuario
-function registrarUsuario() {
-    const nombre = inputNuevoUsuario.value.trim();
-    const password = inputNuevaPassword.value.trim();
-
-    if (nombre === "" || password === "") {
-        return alert("Por favor complete todos los campos");
+    if (kilos <= 0) {
+        return alert("Por favor ingrese una cantidad válida de kilogramos");
     }
 
-    const usuarios = obtenerUsuarios();
+    const lotes = obtenerLotes();
+    const nuevoLote = new LoteTela(lotes.length + 1, fibra, kilos);
 
-    // Validar que no exista el usuario
-    const existe = usuarios.some(u => u.nombre === nombre);
-    if (existe || nombre === "admin") {
-        mensaje.className = "mt-3 fw-bold text-center text-danger";
-        mensaje.textContent = "Ese usuario ya existe";
-        return;
-    }
+    lotes.push(nuevoLote);
+    localStorage.setItem("lotes", JSON.stringify(lotes));
 
-    const nuevoUsuario = new Usuario(usuarios.length + 1, nombre, password);
-    usuarios.push(nuevoUsuario);
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    inputNuevoUsuario.value = "";
-    inputNuevaPassword.value = "";
-    
-    mostrarLogin();
-    mensaje.className = "mt-3 fw-bold text-center text-success";
-    mensaje.textContent = "Usuario registrado correctamente";
+    mostrarLotes();
+    inputKilos.value = "";
 }
 
-// Validar inicio de sesión
-function iniciarSesion() {
-    const nombre = inputUsuario.value.trim();
-    const password = inputPassword.value.trim();
+function obtenerLotes() {
+    return JSON.parse(localStorage.getItem("lotes")) || [];
+}
 
-    if (nombre === "" || password === "") {
-        return alert("Por favor ingrese usuario y contraseña");
-    }
+function mostrarLotes() {
+    const lotes = obtenerLotes();
+    lista.innerHTML = "";
+    let totalAcumulado = 0;
 
-    const usuarios = obtenerUsuarios();
-    const usuarioValido = usuarios.find(u => u.nombre === nombre && u.password === password);
+    lotes.forEach((lote) => {
+        let aguaLote = 0;
+        if (lote.tipoFibra === "algodon") {
+            aguaLote = lote.kilogramos * 10000;
+        } else {
+            aguaLote = lote.kilogramos * 300;
+        }
 
-    if ((nombre === "admin" && password === "1234") || usuarioValido) {
-        mensaje.className = "mt-3 fw-bold text-center text-success";
-        mensaje.textContent = "¡Bienvenido, " + nombre + "!";
-    } else {
-        mensaje.className = "mt-3 fw-bold text-center text-danger";
-        mensaje.textContent = "Usuario o contraseña incorrectos";
-    }
+        totalAcumulado += aguaLote;
+
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center mb-1";
+        li.textContent = `Lote #${lote.id} - ${lote.tipoFibra} (${lote.kilogramos} kg): ${aguaLote} L`;
+
+        lista.appendChild(li);
+    });
+
+    aguaTotalTexto.textContent = totalAcumulado;
+}
+
+function cargarLotes() {
+    mostrarLotes();
 }
