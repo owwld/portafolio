@@ -334,6 +334,7 @@ async function verFichaTecnica(idEspecie) {
     }
 }
 
+
 // Coloca dentro de la ventana todos los textos de clasificacion, habitat, veneno y conservacion
 function actualizarDatosModal(datos) {
     const nombreMostrar = obtenerNombreMostrar(datos);
