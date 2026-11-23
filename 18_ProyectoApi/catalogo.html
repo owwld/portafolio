@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Serpientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light min-vh-100 d-flex flex-column">
+
+    <!-- Menu superior para navegar entre el catalogo, el perfil y cerrar sesion -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+        <div class="container">
+            <span class="navbar-brand fw-bold">MundoSerp</span>
+            <div class="navbar-nav me-auto">
+                <a class="nav-link active fw-bold" href="catalogo.html">Catálogo</a>
+                <a class="nav-link" href="perfiles.html">Mi Perfil / Favoritos</a>
+            </div>
+            <button type="button" id="btnSalir" class="btn btn-sm btn-danger fw-bold px-3">Salir</button>
+        </div>
+    </nav>
+
+    <main class="container py-4 flex-grow-1">
+        <!-- Barra de busqueda para encontrar serpientes por nombre -->
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-body p-3">
+                <form id="formBusqueda" class="row g-2">
+                    <div class="col-md-8">
+                        <input type="text" id="inputBusqueda" class="form-control" placeholder="Buscar serpiente por nombre (ej. Cascabel, Cobra, Pitón)...">
+                    </div>
+                    <div class="col-md-2 d-grid">
+                        <button type="submit" class="btn btn-dark fw-bold">Buscar</button>
+                    </div>
+                    <div class="col-md-2 d-grid">
+                        <button type="button" id="btnLimpiar" class="btn btn-outline-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Animacion de espera mientras se descargan las fotos y datos -->
+        <div id="loader" class="text-center my-5 d-none">
+            <div class="spinner-border text-dark" role="status"></div>
+            <p class="small text-muted mt-2">Cargando serpientes...</p>
+        </div>
+
+        <!-- Espacio donde aparecen las tarjetas de las serpientes -->
+        <div id="catalogoSerpientes" class="row g-4"></div>
+
+        <!-- Botones inferiores para avanzar o retroceder de pagina -->
+        <div class="d-flex justify-content-between align-items-center mt-5 bg-white p-3 rounded-4 shadow-sm">
+            <button type="button" id="btnAnterior" class="btn btn-outline-dark btn-sm fw-bold px-3" disabled>&laquo; Anterior</button>
+            <span id="infoPaginacion" class="small text-muted fw-bold">Cargando...</span>
+            <button type="button" id="btnSiguiente" class="btn btn-outline-dark btn-sm fw-bold px-3" disabled>Siguiente &raquo;</button>
+        </div>
+    </main>
+
+    <!-- Ventana emergente con toda la informacion de la serpiente -->
+    <div class="modal fade" id="modalSerpiente" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden">
+                <div class="modal-header bg-dark text-white">
+                    <div>
+                        <h4 class="modal-title fw-bold mb-0" id="modalNombre"></h4>
+                        <small class="fst-italic opacity-75" id="modalCientifico"></small>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <img id="modalFoto" src="" class="img-fluid rounded-4 shadow-sm w-100 mb-2" style="max-height: 320px; object-fit: cover;">
+                            <small class="text-muted d-block mb-3" style="font-size: 0.75rem;" id="modalAutorFoto"></small>
+                            <div id="modalGaleria" class="d-flex gap-2 flex-wrap"></div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div id="modalVeneno" class="mb-3"></div>
+
+                            <div class="mb-3">
+                                <small class="text-muted fw-bold d-block mb-1">Clasificación Taxonómica:</small>
+                                <div id="modalTaxonomia" class="d-flex gap-2 flex-wrap"></div>
+                            </div>
+
+                            <div class="bg-light p-3 rounded-3 border mb-3">
+                                <small class="text-muted fw-bold d-block mb-1">Sobre la especie y comportamiento:</small>
+                                <p id="modalDesc" class="small text-dark mb-0" style="line-height: 1.6;"></p>
+                            </div>
+
+                            <div class="bg-success bg-opacity-10 p-3 rounded-3 border border-success border-opacity-25 mb-3">
+                                <small class="text-success fw-bold d-block mb-1">Hábitat y Entorno Natural:</small>
+                                <p id="modalHabitat" class="small text-dark mb-0" style="line-height: 1.5;"></p>
+                            </div>
+
+                            <ul class="list-group list-group-flush small mb-3">
+                                <li class="list-group-item px-0 d-flex justify-content-between gap-3">
+                                    <strong class="text-nowrap">Regiones / Distribución:</strong>
+                                    <span id="modalDistribucion" class="text-end text-secondary"></span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between">
+                                    <strong>Estado de Conservación:</strong>
+                                    <span id="modalConservacion" class="fw-bold text-primary"></span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between">
+                                    <strong>Avistamientos registrados:</strong>
+                                    <span id="modalObs" class="fw-bold"></span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between">
+                                    <strong>ID Oficial iNaturalist:</strong>
+                                    <code id="modalId"></code>
+                                </li>
+                            </ul>
+
+                            <a id="modalLinkMapa" href="#" target="_blank" class="btn btn-outline-dark btn-sm fw-bold rounded-3">
+                                Ver mapa de avistamientos en iNaturalist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/serpientes.js"></script>
+    <script src="js/catalogo.js"></script>
+</body>
+</html>
