@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Nueva publicación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="arrendador" data-menu="publicaciones" data-raiz="../" data-modo="crear">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <a href="publicaciones.html" class="titulo-volver">
+        <span class="flecha-volver">‹</span>
+        <span>Nueva publicacion</span>
+      </a>
+    </div>
+
+    <div class="grid-dos-columnas">
+      <div>
+        <section class="panel">
+          <h2>Informacion basica</h2>
+          <div class="grupo-campo">
+            <label for="pubTitulo">Titulo de la publicacion</label>
+            <input type="text" id="pubTitulo" class="campo-texto" placeholder="Ej. Casa moderna cerca de UTL" />
+          </div>
+
+          <div class="grupo-campo">
+            <label for="pubDescripcion">Descripcion</label>
+            <textarea id="pubDescripcion" class="campo-area" placeholder="Describe los espacios, servicios y cercanía..."></textarea>
+          </div>
+
+          <div class="fila-dos-campos">
+            <div class="grupo-campo">
+              <label for="pubPrecio">Precio / mes</label>
+              <input type="number" id="pubPrecio" class="campo-texto" min="0" placeholder="Ej. 8500" />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="pubTipo">Tipo de vivienda</label>
+              <select id="pubTipo" class="campo-select">
+                <option value="">Selecciona tipo...</option>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+                <option value="Cuarto">Cuarto</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fila-dos-campos">
+            <div class="grupo-campo">
+              <label for="pubUniversidad">Universidad cercana</label>
+              <input type="text" id="pubUniversidad" class="campo-texto" placeholder="Ej. UTL, UG, UIA" />
+            </div>
+
+            <div class="grupo-campo">
+              <label for="pubDireccion">Direccion completa</label>
+              <input type="text" id="pubDireccion" class="campo-texto" placeholder="Calle 123, Col. Gran Jardin" />
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Amenidades — Seleccione las opciones disponibles</h2>
+          <div id="chipsAmenidadesForm" class="lista-chips" style="margin-bottom: 18px;">
+            <span class="chip chip-seleccionable" data-amenidad="WiFi">WiFi</span>
+            <span class="chip chip-seleccionable" data-amenidad="parking">parking</span>
+            <span class="chip chip-seleccionable" data-amenidad="Terraza">Terraza</span>
+            <span class="chip chip-seleccionable" data-amenidad="Solo mujer">Solo mujer</span>
+            <span class="chip chip-seleccionable" data-amenidad="A/C">A/C</span>
+            <span class="chip chip-seleccionable" data-amenidad="Amueblado">Amueblado</span>
+            <span class="chip chip-seleccionable" data-amenidad="Mascotas">Mascotas</span>
+          </div>
+
+          <div class="grupo-campo" style="max-width: 240px;">
+            <label for="pubHabitaciones">N° de habitaciones</label>
+            <input type="number" id="pubHabitaciones" class="campo-texto" min="1" value="1" />
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section class="panel">
+          <h2>Fotografias del lugar</h2>
+          <div id="fotoPrincipalForm" class="foto-principal-detalle"></div>
+          <div id="miniaturasForm" class="fila-miniaturas"></div>
+          <input type="file" id="inputFotosPub" accept="image/*" hidden />
+          <p class="subtitulo-pantalla" style="font-size: 0.8rem;">Máximo 3 fotografías.</p>
+        </section>
+
+        <p id="errorPubForm" class="mensaje-error" style="margin-bottom: 12px;"></p>
+
+        <div class="grupo-botones">
+          <button type="button" id="btnPublicarVivienda" class="btn btn-verde">Publicar vivienda</button>
+          <button type="button" id="btnGuardarBorrador" class="btn">Guardar borrador</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/publicacion-form.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Crear reseña</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="inicio" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor-angosto">
+    <div class="encabezado-pantalla">
+      <div>
+        <a id="btnVolverCrearResena" href="resenas.html" class="titulo-volver">
+          <span class="flecha-volver">‹</span>
+          <span>Crea una reseña</span>
+        </a>
+        <p id="subtituloCrearResena" class="subtitulo-pantalla"></p>
+      </div>
+    </div>
+
+    <form id="formCrearResena" class="panel">
+      <div class="grupo-campo">
+        <label for="mensajeResena">Mensaje al arrendador</label>
+        <textarea id="mensajeResena" class="campo-area" placeholder="Comparte tu experiencia sobre la vivienda..." required></textarea>
+      </div>
+
+      <div class="grupo-campo">
+        <label>Estrellas</label>
+        <div id="selectorEstrellas" class="selector-estrellas">
+          <span data-valor="1" class="estrella-vacia">☆</span>
+          <span data-valor="2" class="estrella-vacia">☆</span>
+          <span data-valor="3" class="estrella-vacia">☆</span>
+          <span data-valor="4" class="estrella-vacia">☆</span>
+          <span data-valor="5" class="estrella-vacia">☆</span>
+        </div>
+      </div>
+
+      <p id="errorCrearResena" class="mensaje-error"></p>
+
+      <div class="grupo-botones">
+        <button type="submit" class="btn btn-verde">Enviar reseña</button>
+        <a id="btnCancelarResena" href="resenas.html" class="btn">Cancelar</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/crear-resena.js"></script>
+</body>
+</html>

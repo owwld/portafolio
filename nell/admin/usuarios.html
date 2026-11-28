@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Administrar usuarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="admin" data-menu="usuarios" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <h1>Administrar usuarios</h1>
+    </div>
+
+    <section class="fila-indicadores">
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Total usuarios</p>
+        <p id="indAdmTotalUsuarios" class="valor">0</p>
+      </div>
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Estudiantes</p>
+        <p id="indAdmEstudiantes" class="valor estado-verde">0</p>
+      </div>
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Arrendadores</p>
+        <p id="indAdmArrendadores" class="valor">0</p>
+      </div>
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Publicaciones</p>
+        <p id="indAdmPublicaciones" class="valor estado-verde">0</p>
+      </div>
+    </section>
+
+    <div class="panel" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <label for="filtroRolAdmin" class="subtitulo-pantalla">Filtrar por rol</label>
+        <select id="filtroRolAdmin" class="campo-select" style="width:auto;">
+          <option value="Todos">Todos</option>
+          <option value="Estudiantes">Estudiantes</option>
+          <option value="Arrendadores">Arrendadores</option>
+          <option value="Administradores">Administradores</option>
+        </select>
+      </div>
+
+      <button type="button" id="btnRestablecerPrueba" class="btn btn-ambar">Restablecer datos de prueba</button>
+    </div>
+
+    <section class="tabla-contenedor">
+      <table class="tabla-datos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Miembro desde</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaUsuariosAdminBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/usuarios.js"></script>
+</body>
+</html>

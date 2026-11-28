@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Registro Estudiante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+  <header class="encabezado-registro">
+    <a href="../index.html" class="logo-nell">NELL<span class="punto">.</span></a>
+    <h1>Estudiante</h1>
+  </header>
+
+  <main class="contenedor-angosto">
+    <form id="formRegistroEstudiante">
+      <section class="panel">
+        <h2>Información personal</h2>
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="estNombre">Nombre</label>
+            <input type="text" id="estNombre" class="campo-texto" required />
+          </div>
+          <div class="grupo-campo">
+            <label for="estApellido">Apellido</label>
+            <input type="text" id="estApellido" class="campo-texto" required />
+          </div>
+        </div>
+
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="estCorreo">Correo electronico</label>
+            <input type="email" id="estCorreo" class="campo-texto" required />
+          </div>
+          <div class="grupo-campo">
+            <label for="estTelefono">Telefono</label>
+            <input type="text" id="estTelefono" class="campo-texto" placeholder="477 000 0000" required />
+          </div>
+        </div>
+
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="estCiudad">Ciudad</label>
+            <input type="text" id="estCiudad" class="campo-texto" value="León, Guanajuato" required />
+          </div>
+          <div class="grupo-campo">
+            <label for="estUniversidad">Universidad cercana</label>
+            <input type="text" id="estUniversidad" class="campo-texto" placeholder="Ej. UTL, UG, UIA" required />
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Seguridad</h2>
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="estContrasena">Contraseña</label>
+            <input type="password" id="estContrasena" class="campo-texto" required />
+          </div>
+          <div class="grupo-campo">
+            <label for="estConfirmar">Confirmar contraseña</label>
+            <input type="password" id="estConfirmar" class="campo-texto" required />
+          </div>
+        </div>
+        <p id="errorRegistroEst" class="mensaje-error"></p>
+      </section>
+
+      <div class="grupo-botones">
+        <a href="../index.html" class="btn btn-verde btn-pildora">Regresar</a>
+        <button type="submit" class="btn btn-verde btn-pildora">Registrarse</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/estudiante.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Editar usuario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="admin" data-menu="usuarios" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor-angosto">
+    <div class="encabezado-pantalla">
+      <a href="usuarios.html" class="titulo-volver">
+        <span class="flecha-volver">‹</span>
+        <span>Editar usuario</span>
+      </a>
+    </div>
+
+    <form id="formEditarUsuarioAdmin" class="panel">
+      <div class="fila-dos-campos">
+        <div class="grupo-campo">
+          <label for="admUsrNombre">Nombre</label>
+          <input type="text" id="admUsrNombre" class="campo-texto" required />
+        </div>
+        <div class="grupo-campo">
+          <label for="admUsrApellido">Apellido</label>
+          <input type="text" id="admUsrApellido" class="campo-texto" required />
+        </div>
+      </div>
+
+      <div class="fila-dos-campos">
+        <div class="grupo-campo">
+          <label for="admUsrCorreo">Correo</label>
+          <input type="email" id="admUsrCorreo" class="campo-texto" required />
+        </div>
+        <div class="grupo-campo">
+          <label for="admUsrTelefono">Telefono</label>
+          <input type="text" id="admUsrTelefono" class="campo-texto" />
+        </div>
+      </div>
+
+      <div class="fila-dos-campos">
+        <div class="grupo-campo">
+          <label for="admUsrCiudad">Ciudad</label>
+          <input type="text" id="admUsrCiudad" class="campo-texto" />
+        </div>
+
+        <div id="campoAdminUniversidad" class="grupo-campo" hidden>
+          <label for="admUsrUniversidad">Universidad cercana</label>
+          <input type="text" id="admUsrUniversidad" class="campo-texto" />
+        </div>
+      </div>
+
+      <div id="camposAdminArrendador" class="fila-dos-campos" hidden>
+        <div class="grupo-campo">
+          <label for="admUsrRfc">RFC</label>
+          <input type="text" id="admUsrRfc" class="campo-texto" />
+        </div>
+        <div class="grupo-campo">
+          <label for="admUsrCuenta">Cuenta bancaria</label>
+          <input type="text" id="admUsrCuenta" class="campo-texto" />
+        </div>
+      </div>
+
+      <div class="grupo-campo">
+        <label for="admUsrNuevaPass">Nueva contraseña</label>
+        <input type="password" id="admUsrNuevaPass" class="campo-texto" placeholder="Dejar vacía para mantener la actual" />
+      </div>
+
+      <p id="errorEditarUsrAdmin" class="mensaje-error"></p>
+
+      <div class="grupo-botones">
+        <button type="submit" class="btn btn-verde">Guardar cambios</button>
+        <a href="usuarios.html" class="btn">Cancelar</a>
+        <button type="button" id="btnEliminarUsrEditar" class="btn btn-rojo">Eliminar usuario</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/editar-usuario.js"></script>
+</body>
+</html>

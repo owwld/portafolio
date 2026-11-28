@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Configuración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="arrendador" data-menu="perfil" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor-angosto">
+    <div class="encabezado-pantalla">
+      <button type="button" id="btnVolverConfig" class="titulo-volver" style="background:none; border:none;">
+        <span class="flecha-volver">‹</span>
+        <span>Configuracion</span>
+      </button>
+    </div>
+
+    <section class="panel">
+      <h2>Notificaciones</h2>
+      <form id="formNotificaciones">
+        <div class="fila-switch">
+          <div>
+            <strong>Solicitudes y contratos</strong>
+            <p id="descSwSolicitudes" class="subtitulo-pantalla"></p>
+          </div>
+          <label class="interruptor">
+            <input type="checkbox" id="swSolicitudes" />
+            <span class="deslizador"></span>
+          </label>
+        </div>
+
+        <div class="fila-switch">
+          <div>
+            <strong>Mensajes nuevos</strong>
+            <p class="subtitulo-pantalla">Avisos cuando recibas un nuevo mensaje</p>
+          </div>
+          <label class="interruptor">
+            <input type="checkbox" id="swMensajes" />
+            <span class="deslizador"></span>
+          </label>
+        </div>
+
+        <div class="fila-switch">
+          <div>
+            <strong>Recomendaciones</strong>
+            <p id="descSwRecomendaciones" class="subtitulo-pantalla"></p>
+          </div>
+          <label class="interruptor">
+            <input type="checkbox" id="swRecomendaciones" />
+            <span class="deslizador"></span>
+          </label>
+        </div>
+
+        <p id="msgConfig" class="mensaje-exito"></p>
+        <div class="grupo-botones">
+          <button type="submit" class="btn btn-verde">Guardar cambios</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>¿Necesitas ayuda?</h2>
+      <p class="subtitulo-pantalla" style="margin-bottom: 6px;">Correo: soporte@nestlivingl.com</p>
+      <p class="subtitulo-pantalla" style="margin-bottom: 6px;">Teléfono: 477 000 0000</p>
+      <p class="subtitulo-pantalla" style="margin-bottom: 14px;">Horario: Lun - Vie, 9:00 - 18:00</p>
+      <button type="button" id="btnReportarProblema" class="btn btn-ambar">Reportar un problema</button>
+      <p id="msgReporte" class="mensaje-exito"></p>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/configuracion.js"></script>
+</body>
+</html>

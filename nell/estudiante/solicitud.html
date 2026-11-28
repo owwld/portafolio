@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Solicitud de renta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="inicio" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <div>
+        <a id="btnVolverSolicitud" href="detalle.html" class="titulo-volver">
+          <span class="flecha-volver">‹</span>
+          <span>Solicitud de renta</span>
+        </a>
+        <p id="subtituloSolicitud" class="subtitulo-pantalla"></p>
+      </div>
+    </div>
+
+    <div class="grid-dos-columnas">
+      <form id="formSolicitud" class="panel">
+        <p id="avisoSolicitudExistente" class="mensaje-error" style="margin-bottom: 14px;" hidden>
+          Ya tienes una solicitud pendiente para esta vivienda.
+        </p>
+
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="solFechaInicio">Fecha de inicio</label>
+            <input type="date" id="solFechaInicio" class="campo-texto" required />
+          </div>
+
+          <div class="grupo-campo">
+            <label for="solDuracion">Duracion estimada</label>
+            <select id="solDuracion" class="campo-select">
+              <option value="6">6 Meses</option>
+              <option value="12" selected>12 Meses</option>
+              <option value="18">18 Meses</option>
+              <option value="24">24 Meses</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="solMensaje">Mensaje al arrendador</label>
+          <textarea id="solMensaje" class="campo-area" placeholder="Preséntate brevemente con el arrendador..."></textarea>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="solDocumentos">Documentos adjuntos (Opcional)</label>
+          <input type="file" id="solDocumentos" class="campo-texto" />
+        </div>
+
+        <div class="grupo-botones">
+          <button type="submit" id="btnEnviarSolicitud" class="btn btn-verde">Enviar solicitud</button>
+          <a id="btnCancelarSolicitud" href="detalle.html" class="btn">Cancelar</a>
+        </div>
+      </form>
+
+      <div>
+        <section class="panel">
+          <h2>Estado de Solicitud</h2>
+          <p class="estado-ambar" style="font-size: 1.65rem; margin-bottom: 18px;">Pendiente</p>
+
+          <h3>Resumen</h3>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="subtitulo-pantalla">Precio mensual</span>
+            <strong id="resumenPrecio"></strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="subtitulo-pantalla">Deposito</span>
+            <strong id="resumenDeposito"></strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="subtitulo-pantalla">Duracion</span>
+            <strong id="resumenDuracion">12 Meses</strong>
+          </div>
+          <hr class="linea-divisoria" />
+          <div style="display: flex; justify-content: space-between; font-size: 1.05rem;">
+            <span>Total primer mes</span>
+            <strong id="resumenTotal" class="estado-verde"></strong>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>INE</h2>
+          <div id="zonaIne" class="zona-subida-foto">
+            <p id="nombreArchivoIne">Seleccione el archivo de su INE</p>
+          </div>
+          <input type="file" id="inputIne" accept="image/*,.pdf" hidden />
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/solicitud.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="franja-bienvenida">
+    <h1>Bienvenido Usuario</h1>
+    <p>Vivienda confiable, cerca de tu universidad, en una sola plataforma para estudiantes foráneos.</p>
+  </header>
+
+  <main class="grid-login">
+    <section class="marca-login">
+      <div class="logo-gigante">NELL<span class="punto">.</span></div>
+      <p class="lema">Nest Living Leon</p>
+
+      <div class="cuentas-prueba">
+        <strong>Cuentas de prueba:</strong><br />
+        • Estudiante 1: carlos.mendoza@mail.com / 123456<br />
+        • Estudiante 2: andres.guardado@mail.com / 123456<br />
+        • Arrendador: miguecarp21@gmail.com / 123456<br />
+        • Administrador: admin@nell.com / admin123
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>¿Ya tienes cuenta?</h2>
+      <form id="formLogin">
+        <div class="grupo-campo">
+          <label for="correoLogin">Correo electronico</label>
+          <input type="email" id="correoLogin" class="campo-texto" placeholder="ejemplo@correo.com" required />
+        </div>
+        <div class="grupo-campo">
+          <label for="contrasenaLogin">Contraseña</label>
+          <input type="password" id="contrasenaLogin" class="campo-texto" placeholder="••••••" required />
+        </div>
+        <p id="errorLogin" class="mensaje-error"></p>
+        <div class="grupo-botones">
+          <button type="submit" class="btn btn-verde btn-pildora btn-bloque">Iniciar sesion</button>
+        </div>
+      </form>
+
+      <hr class="linea-divisoria" />
+
+      <p class="subtitulo-pantalla" style="margin-bottom: 12px;">¿Eres nuevo usuario?</p>
+      <div class="grupo-botones">
+        <a href="registro/estudiante.html" class="btn btn-verde btn-pildora">Soy estudiante</a>
+        <a href="registro/arrendador.html" class="btn btn-pildora">Soy arrendador</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

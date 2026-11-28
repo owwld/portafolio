@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Chat online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="historial" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor-angosto">
+    <div class="encabezado-pantalla">
+      <button type="button" id="btnVolverChat" class="titulo-volver" style="background:none; border:none;">
+        <span class="flecha-volver">‹</span>
+        <span>Chat online</span>
+      </button>
+    </div>
+
+    <section class="caja-chat">
+      <div id="tituloChatCon" class="cabecera-chat">Chat</div>
+      <div id="areaMensajes" class="area-mensajes"></div>
+      <form id="formEnviarMensaje" class="barra-enviar-chat">
+        <input type="text" id="inputMensajeChat" class="campo-texto" placeholder="Escribe un mensaje..." autocomplete="off" />
+        <button type="submit" class="btn btn-verde" title="Enviar">➤</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/chat.js"></script>
+</body>
+</html>

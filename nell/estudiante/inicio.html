@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Inicio Estudiante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="inicio" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <div>
+        <h1>Encuentra tu hogar universitario</h1>
+        <p class="subtitulo-pantalla">Explora opciones verificadas cerca de tu campus en León, Guanajuato.</p>
+      </div>
+    </div>
+
+    <form id="formFiltros" class="barra-filtros">
+      <div class="grupo-campo" style="margin-bottom: 0;">
+        <label for="filtroUniversidad">Buscar por universidad cerca</label>
+        <input type="text" id="filtroUniversidad" class="campo-texto" placeholder="Ej. UTL, UG, UIA" />
+      </div>
+
+      <div class="grupo-campo" style="margin-bottom: 0;">
+        <label for="filtroPrecio">Precio maximo</label>
+        <input type="number" id="filtroPrecio" class="campo-texto" placeholder="Ej. 10000" min="0" />
+      </div>
+
+      <div class="grupo-campo" style="margin-bottom: 0;">
+        <label for="filtroTipo">Tipo de vivienda</label>
+        <select id="filtroTipo" class="campo-select">
+          <option value="Todos">Todos</option>
+          <option value="Casa">Casa</option>
+          <option value="Departamento">Departamento</option>
+          <option value="Cuarto">Cuarto</option>
+        </select>
+      </div>
+
+      <div class="grupo-campo" style="margin-bottom: 0;">
+        <label for="filtroGenero">Genero</label>
+        <select id="filtroGenero" class="campo-select">
+          <option value="Todos">Todos</option>
+          <option value="Solo mujeres">Solo mujeres</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-verde">Buscar</button>
+    </form>
+
+    <section id="gridViviendas" class="grid-viviendas"></section>
+    <p id="sinResultados" class="panel subtitulo-pantalla" style="text-align: center;" hidden>
+      No se encontraron viviendas con los filtros seleccionados.
+    </p>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/inicio.js"></script>
+</body>
+</html>

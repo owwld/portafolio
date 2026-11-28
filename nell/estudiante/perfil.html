@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Perfil Estudiante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="perfil" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <h1>Mi perfil</h1>
+      <a id="enlaceConfiguracion" href="configuracion.html" class="btn" title="Configuración" style="font-size: 1.2rem;">⚙</a>
+    </div>
+
+    <div class="grid-perfil">
+      <aside class="panel" style="text-align: center;">
+        <div id="perfilAvatarContenedor"></div>
+        <h2 id="perfilNombreCorto" style="margin-bottom: 4px;"></h2>
+        <p id="perfilEtiquetaRol" class="subtitulo-pantalla"></p>
+        <p id="perfilCiudad" class="subtitulo-pantalla" style="margin-top: 4px;"></p>
+        <hr class="linea-divisoria" />
+        <p id="perfilMiembroDesde" class="subtitulo-pantalla" style="margin-bottom: 8px;"></p>
+        <div id="perfilStats" class="subtitulo-pantalla"></div>
+      </aside>
+
+      <div>
+        <section class="panel">
+          <h2>Información personal</h2>
+          <form id="formDatosPerfil">
+            <div class="fila-dos-campos">
+              <div class="grupo-campo">
+                <label for="perfilNombre">Nombre</label>
+                <input type="text" id="perfilNombre" class="campo-texto" required />
+              </div>
+              <div class="grupo-campo">
+                <label for="perfilApellido">Apellido</label>
+                <input type="text" id="perfilApellido" class="campo-texto" required />
+              </div>
+            </div>
+
+            <div class="fila-dos-campos">
+              <div class="grupo-campo">
+                <label for="perfilCorreo">Correo electronico</label>
+                <input type="email" id="perfilCorreo" class="campo-texto" required />
+              </div>
+              <div class="grupo-campo">
+                <label for="perfilTelefono">Telefono</label>
+                <input type="text" id="perfilTelefono" class="campo-texto" />
+              </div>
+            </div>
+
+            <div class="fila-dos-campos">
+              <div class="grupo-campo">
+                <label for="perfilCiudadInput">Ciudad</label>
+                <input type="text" id="perfilCiudadInput" class="campo-texto" />
+              </div>
+              <div id="grupoUniversidadPerfil" class="grupo-campo">
+                <label for="perfilUniversidad">Universidad cerca</label>
+                <input type="text" id="perfilUniversidad" class="campo-texto" />
+              </div>
+            </div>
+
+            <p id="msgDatosPerfil"></p>
+            <div class="grupo-botones">
+              <button type="submit" class="btn btn-verde">Guardar cambios</button>
+              <button type="button" id="btnCancelarPerfil" class="btn">Cancelar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Contraseña</h2>
+          <form id="formContrasenaPerfil">
+            <div class="fila-dos-campos">
+              <div class="grupo-campo">
+                <label for="perfilNuevaPass">Contraseña</label>
+                <input type="password" id="perfilNuevaPass" class="campo-texto" required />
+              </div>
+              <div class="grupo-campo">
+                <label for="perfilConfirmarPass">Confirmar contraseña</label>
+                <input type="password" id="perfilConfirmarPass" class="campo-texto" required />
+              </div>
+            </div>
+            <p id="msgPassPerfil"></p>
+            <div class="grupo-botones">
+              <button type="submit" class="btn btn-verde">Cambiar contraseña</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/perfil.js"></script>
+</body>
+</html>

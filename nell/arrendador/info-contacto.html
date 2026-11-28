@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Información de contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="arrendador" data-menu="solicitudes" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <a href="solicitudes.html" class="titulo-volver">
+        <span class="flecha-volver">‹</span>
+        <span>Informacion de contacto</span>
+      </a>
+    </div>
+
+    <div class="grid-perfil">
+      <aside class="panel" style="text-align: center;">
+        <div id="contactoIniciales" class="avatar-grande"></div>
+        <h2 id="contactoNombre" style="margin-bottom: 4px;"></h2>
+        <p class="subtitulo-pantalla">Estudiante</p>
+        <p id="contactoCiudadLateral" class="subtitulo-pantalla" style="margin-top: 4px;"></p>
+        <hr class="linea-divisoria" />
+        <p id="contactoMiembro" class="subtitulo-pantalla" style="margin-bottom: 8px;"></p>
+        <p id="contactoSolicitudesPrevias" class="subtitulo-pantalla" style="margin-bottom: 6px;"></p>
+        <p id="contactoContratosFin" class="subtitulo-pantalla" style="margin-bottom: 16px;"></p>
+        <a id="btnChatContacto" href="chat.html" class="btn btn-verde btn-bloque">Chat online</a>
+      </aside>
+
+      <div>
+        <section class="panel">
+          <h2>Datos del contacto</h2>
+          <div class="fila-dos-campos">
+            <div class="grupo-campo">
+              <label>Correo electronico</label>
+              <p id="contactoCorreo" style="font-weight: 600;"></p>
+            </div>
+            <div class="grupo-campo">
+              <label>Telefono</label>
+              <p id="contactoTelefono" style="font-weight: 600;"></p>
+            </div>
+            <div class="grupo-campo">
+              <label>Ciudad</label>
+              <p id="contactoCiudad" style="font-weight: 600;"></p>
+            </div>
+            <div class="grupo-campo">
+              <label>Universidad cercana</label>
+              <p id="contactoUniversidad" style="font-weight: 600;"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Historial en la plataforma</h2>
+          <div id="historialPlataformaContacto"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/info-contacto.js"></script>
+</body>
+</html>

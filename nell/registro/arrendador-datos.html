@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Registro Arrendador (Paso 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+  <header class="encabezado-registro">
+    <a href="../index.html" class="logo-nell">NELL<span class="punto">.</span></a>
+    <h1>Arrendador</h1>
+  </header>
+
+  <main class="contenedor-angosto">
+    <form id="formRegistroArr2">
+      <section class="panel">
+        <h2>Información personal</h2>
+        <div class="fila-dos-campos">
+          <div class="grupo-campo">
+            <label for="arrRfc">RFC</label>
+            <input type="text" id="arrRfc" class="campo-texto" placeholder="Ej. ABCD900101XYZ" required />
+          </div>
+          <div class="grupo-campo">
+            <label for="arrCuenta">Cuenta bancaria</label>
+            <input type="text" id="arrCuenta" class="campo-texto" placeholder="18 dígitos CLABE o cuenta" required />
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Fotografía</h2>
+        <div id="zonaFotoArr" class="zona-subida-foto">
+          <p>Haz clic aquí para subir tu fotografía (opcional)</p>
+          <img id="previewFotoArr" class="vista-previa-avatar" alt="Vista previa" hidden />
+        </div>
+        <input type="file" id="inputFotoArr" accept="image/*" hidden />
+      </section>
+
+      <section class="panel">
+        <h2>Términos y condiciones</h2>
+        <p class="subtitulo-pantalla">
+          Al hacer clic en Registrarse, confirmas que estás de acuerdo con nuestros Términos y Condiciones. Este sitio es un prototipo: los datos se guardan únicamente en tu navegador.
+        </p>
+        <p id="errorRegistroArr2" class="mensaje-error"></p>
+      </section>
+
+      <div class="grupo-botones">
+        <a href="arrendador.html" class="btn btn-pildora">Regresar</a>
+        <button type="submit" class="btn btn-verde btn-pildora">Registrarse</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/arrendador-datos.js"></script>
+</body>
+</html>

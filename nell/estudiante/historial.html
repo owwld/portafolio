@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Historial de contratos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="historial" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <div>
+        <h1>Historial de contratos</h1>
+        <p id="subtituloHistorial" class="subtitulo-pantalla">0 Contactos Registrados</p>
+      </div>
+    </div>
+
+    <section class="fila-indicadores">
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Total contratos</p>
+        <p id="indTotalContratos" class="valor">0</p>
+      </div>
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Activos</p>
+        <p id="indActivosContratos" class="valor estado-verde">0</p>
+      </div>
+      <div class="tarjeta-indicador">
+        <p class="etiqueta">Finalizado</p>
+        <p id="indFinalizadosContratos" class="valor">0</p>
+      </div>
+    </section>
+
+    <section class="tabla-contenedor">
+      <table class="tabla-datos">
+        <thead>
+          <tr>
+            <th>Vivienda</th>
+            <th>Arrendador</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaHistorialBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/historial.js"></script>
+</body>
+</html>

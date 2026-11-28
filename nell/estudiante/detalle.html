@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Detalles de vivienda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="inicio" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <a href="inicio.html" class="titulo-volver">
+        <span class="flecha-volver">‹</span>
+        <span>Detalles de tu nuevo hogar</span>
+      </a>
+    </div>
+
+    <div class="grid-dos-columnas">
+      <div>
+        <div id="detalleFotoPrincipal" class="foto-principal-detalle"></div>
+        <div id="detalleMiniaturas" class="fila-miniaturas"></div>
+
+        <section class="panel">
+          <h2>Descripcion</h2>
+          <p id="detalleDescripcion" style="margin-bottom: 16px;"></p>
+          <div id="detalleAmenidades" class="lista-chips" style="margin-bottom: 16px;"></div>
+          <p id="detalleHabitaciones" class="subtitulo-pantalla" style="margin-bottom: 16px;"></p>
+          <a id="btnVerResenas" href="resenas.html" class="btn">Ver reseñas</a>
+        </section>
+      </div>
+
+      <div>
+        <section class="panel">
+          <h2 id="detalleTitulo" style="font-size: 1.45rem; margin-bottom: 4px;"></h2>
+          <div id="detallePrecio" class="precio-detalle"></div>
+          <p id="detalleDepositoUni" class="subtitulo-pantalla" style="margin-bottom: 20px;"></p>
+
+          <div class="grupo-botones" style="flex-direction: column;">
+            <a id="btnSolicitarRenta" href="solicitud.html" class="btn btn-verde btn-bloque">Solicitar renta</a>
+            <a id="btnContactarArr" href="chat.html" class="btn btn-bloque">Contactar con el arrendador</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Informacion del arrendador</h2>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+            <span id="arrDetalleIniciales" class="avatar-circulo"></span>
+            <div>
+              <strong id="arrDetalleNombre"></strong>
+              <p id="arrDetalleMiembro" class="subtitulo-pantalla"></p>
+            </div>
+          </div>
+          <p id="arrDetalleTelefono" class="subtitulo-pantalla" style="margin-bottom: 6px;"></p>
+          <p id="arrDetalleCorreo" class="subtitulo-pantalla"></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/detalle.js"></script>
+</body>
+</html>

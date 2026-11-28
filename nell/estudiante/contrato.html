@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Información de contrato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="historial" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor">
+    <div class="encabezado-pantalla">
+      <button type="button" id="btnVolverContrato" class="titulo-volver" style="background:none; border:none;">
+        <span class="flecha-volver">‹</span>
+        <span>Información de contrato</span>
+      </button>
+    </div>
+
+    <div class="aviso-legal">
+      Aviso: Este documento tiene como único propósito dejar constancia de los acuerdos entre las partes y servir como un registro de referencia. No constituye asesoría legal ni sustituye un contrato elaborado o revisado por un profesional del derecho. Si se requiere un documento con efectos legales específicos, se recomienda consultar a un abogado.
+      <strong>EXIJA A SU ARRENDADOR UN CONTRATO OFICIAL</strong>
+    </div>
+
+    <div class="grid-mitad">
+      <section class="panel">
+        <h2>Estudiante</h2>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span id="estIniciales" class="avatar-circulo"></span>
+          <div>
+            <strong id="estNombre"></strong>
+            <p id="estCiudad" class="subtitulo-pantalla"></p>
+            <p id="estTelefono" class="subtitulo-pantalla"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Arrendador</h2>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span id="arrIniciales" class="avatar-circulo"></span>
+          <div>
+            <strong id="arrNombre"></strong>
+            <p id="arrCiudad" class="subtitulo-pantalla"></p>
+            <p id="arrTelefono" class="subtitulo-pantalla"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Informacion de vivienda</h2>
+      <div class="fila-dos-campos">
+        <div class="grupo-campo">
+          <label>Vivienda</label>
+          <p id="conVivienda" style="font-weight: 600;"></p>
+        </div>
+        <div class="grupo-campo">
+          <label>Direccion</label>
+          <p id="conDireccion" style="font-weight: 600;"></p>
+        </div>
+        <div class="grupo-campo">
+          <label>Renta mensual</label>
+          <p id="conRenta" class="estado-verde"></p>
+        </div>
+        <div class="grupo-campo">
+          <label>Deposito</label>
+          <p id="conDeposito" style="font-weight: 600;"></p>
+        </div>
+        <div class="grupo-campo">
+          <label>Fecha de inicio</label>
+          <p id="conInicio" style="font-weight: 600;"></p>
+        </div>
+        <div class="grupo-campo">
+          <label>Duracion</label>
+          <p id="conDuracion" style="font-weight: 600;"></p>
+        </div>
+      </div>
+
+      <div class="grupo-botones no-imprimir">
+        <button type="button" id="btnDescargarPdf" class="btn btn-verde">Descargar resumen PDF</button>
+        <a id="btnChatContrato" href="chat.html" class="btn">Chat online</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/contrato.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NELL - Reseñas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body data-rol="estudiante" data-menu="inicio" data-raiz="../">
+  <header id="barraSuperior"></header>
+
+  <main class="contenedor-angosto">
+    <div class="encabezado-pantalla">
+      <div>
+        <a id="btnVolverResenas" href="inicio.html" class="titulo-volver">
+          <span class="flecha-volver">‹</span>
+          <span>Reseñas</span>
+        </a>
+        <p class="subtitulo-pantalla">Reseñas publicadas</p>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <select id="filtroOrdenResenas" class="campo-select" style="width: auto;">
+          <option value="recientes">Más recientes</option>
+          <option value="mayor">Mayor calificación</option>
+          <option value="menor">Menor calificación</option>
+        </select>
+        <a id="btnCrearResena" href="crear-resena.html" class="btn btn-verde">Crear reseña</a>
+      </div>
+    </div>
+
+    <section id="listaResenas"></section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/resenas.js"></script>
+</body>
+</html>
